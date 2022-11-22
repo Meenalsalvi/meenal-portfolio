@@ -1,10 +1,10 @@
 function myFunction(clicked_id) {
    var element = document.getElementById(clicked_id);
-   // console.log(clicked_id);
+   console.log(clicked_id);
    var removeelement = document.querySelectorAll('input[type="button"]')
    console.log(removeelement);
    element.classList.add("activebtn");
-   removeelement.classList.remove("button");
+   // removeelement.classList.remove("button");
 
   }
 

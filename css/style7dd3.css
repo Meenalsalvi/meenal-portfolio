@@ -1504,6 +1504,16 @@ button.activebtn{
   font-weight: 400;
   text-transform: uppercase;
 }
+.resumo_fn_testimonials .avatar{
+  vertical-align: middle;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  /* border:5px solid rgb(245, 245, 245); */
+  -webkit-box-shadow: 1px 1px 3px 0px rgb(155, 151, 151);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(155, 151, 151);
+    box-shadow: 1px 1px 3px 0px rgb(155, 151, 151); 
+}
 #news {
   padding: 150px 0 47px;
 }
