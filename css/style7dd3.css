@@ -709,8 +709,8 @@ button.activebtn{
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  width: 340px;
-  height: 220px;
+  width: 240px;
+  height: 140px;
   text-decoration: none;
   font-size: 18px;
   color: #888;
@@ -3037,4 +3037,3 @@ body.light .resumo_fn_modalbox .modal_content::-webkit-scrollbar-thumb {
     display: none;
   }
 }
-nav-opened"
