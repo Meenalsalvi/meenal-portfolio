@@ -65,7 +65,13 @@
 		
 		<!-- Main Left Part -->
 		<div class="resumo_fn_left">
-
+			<!-- <div class="toggle-theme">
+				<label class="switch">
+					<input type="checkbox" id="theme-toggle">
+					<span class="slider round"></span>
+				</label>
+			</div> -->
+			
 			<!-- Page -->
 			<div class="resumo_fn_page">
 
@@ -312,18 +318,18 @@
 								<div class="item modal_item" data-index="1">
 									<div class="img_holder">
 										<img src="img/thumb/square.jpg" alt="">
-										<div class="abs_img" data-bg-img="img/portfolio/PMO_Dashboard.png"></div>
+										<div class="abs_img" data-bg-img="img/thumb/Thumbnail_PMO.png"></div>
 									</div>
 									<div class="title_holder">
 										<p>website, it services, informative</p>
 										<h3><a href="#">PMO Dashboard</a></h3>
 									</div>
 									<div class="fn__hidden">
-										<p class="fn__cat">website, it services, informative</p>
+										<p class="fn__cat">CRM Dashboard,UI Design</p>
 										<h3 class="fn__title">PMO Dashboard</h3>
 										<div class="img_holder">
 											<img src="img/thumb/square.jpg" alt="">
-											<div class="abs_img" data-bg-img="img/portfolio/PMO_Dashboard.png"></div>
+											<div class="abs_img" data-bg-img="img/thumb/Thumbnail_PMO.png"></div>
 										</div>
 										<!-- CONTENT FOR PROJECT -->
 										
@@ -504,24 +510,6 @@
 
 									</div>
 								</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 								<div class="item modal_item" data-index="1">
 									<div class="img_holder">
@@ -1214,6 +1202,49 @@
 <script src="js/init7dd3.js?ver=4"></script>
 <!-- /Scripts -->
 
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+	  const toggle = document.getElementById('theme-toggle');
+	  toggle.addEventListener('change', function() {
+		document.body.classList.toggle('dark', toggle.checked);
+	  });
+	});
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    	var panel = document.querySelector('.header'); // Change the selector to target your header
+    	window.addEventListener('scroll', function() {
+        	if (window.scrollY > 50) {
+            	panel.classList.add('hidden-panel');
+        	} else {
+            	panel.classList.remove('hidden-panel');
+        }
+    	});
+	});
+
+</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    var panel = document.querySelector('.resumo_fn_right'); // Get the right panel
+    var initialScrollPos = 0; // Store the initial scroll position
+
+    window.addEventListener('scroll', function() {
+        var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScrollPos > initialScrollPos) {
+            // Scrolling down
+            panel.classList.add('hidden-panel');
+        } else {
+            // Scrolling up
+            panel.classList.remove('hidden-panel');
+        }
+        initialScrollPos = currentScrollPos; // Update the initial position for the next scroll
+    });
+});
+</script>
+
+	
 </body>
 
 <!-- Mirrored from frenify.net/envato/frenify/html/resumo/1/index-light.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Oct 2022 13:39:22 GMT -->

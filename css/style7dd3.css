@@ -8,6 +8,127 @@ html {
   padding: 0;
   margin: 0;
 }
+
+/* Toggle Switch */
+.switch {
+  position: fixed;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Overall background and text colors for dark mode */
+body.dark {
+  background-color: #121212; /* Darker background for better contrast */
+  color: #ffffff; /* White text color */
+}
+
+/* Specific adjustments for header and titles */
+body.dark .resumo_fn_main_title,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: #ffffff; /* Ensures headers and titles are visible in dark mode */
+}
+
+/* Link colors in dark mode for better visibility */
+body.dark a {
+  color: #76c7c0; /* Light blue for better visibility */
+}
+
+/* Adjustments for specific section backgrounds if necessary */
+body.dark section,
+body.dark .resumo_fn_page,
+body.dark .resumo_fn_left,
+body.dark .resumo_fn_content {
+  background-color: #1a1a1a; /* Slightly lighter than the overall background for subtle contrast */
+}
+
+/* Style modifications for the navigation bar and other elements */
+body.dark .resumo_fn_navigation,
+body.dark .resumo_fn_right {
+  background-color: #333; /* Dark gray for sidebar elements */
+}
+
+/* Ensure that form inputs and text areas are styled appropriately */
+body.dark input, 
+body.dark textarea {
+  background-color: #333; /* Dark backgrounds for inputs */
+  color: #ccc; /* Lighter text for inputs */
+  border-color: #555; /* Dark borders for inputs */
+}
+
+body.dark .resumo_fn_modalbox .box_inner,
+body.dark .modal_content {
+  background-color: #2c2c2c; /* Dark backgrounds for modal content */
+  color: #ffffff; /* Ensure text within modals is visible */
+}
+
+body.dark .resumo_fn_about_info table th,
+body.dark .resumo_fn_about_info table th a,
+body.dark .resumo_fn_boxed_list .item h3,
+body.dark .resumo_fn_boxed_list .item h5 {
+    color: #ffffff; /* Ensures headers and texts are easily readable */
+}
+
+body.dark .resumo_fn_boxed_list .item p {
+    color: #cccccc; /* Slightly dimmer color for less prominent text */
+}
+body.dark .resumo_fn_boxed_list {
+  background-color: #222; /* Darker background for the list items */
+  color: #ccc; /* Light gray text for readability */
+}
+
+body.dark .resumo_fn_partners img {
+  filter: brightness(0.8); /* Adjust brightness to suit dark theme */
+}
+
+
+
 body {
   font-family: Jost, Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -131,8 +252,9 @@ button.activebtn{
     width: 32%;
   }
   .scrolled .resumo_fn_left {
-    width: 68%;
+    width: 100%;
   }
+
 }
 .resumo_fn_right {
   width: 44%;
@@ -221,6 +343,11 @@ button.activebtn{
   font-size: 30px;
   min-height: 36px;
   position: relative;
+}
+.scrolled .resumo_fn_right{
+  display: none;
+  width: 0%;
+  /* font-size: small; */
 }
 .scrolled .resumo_fn_right .title_holder h3 {
   font-weight: 400;
@@ -2209,6 +2336,7 @@ button.activebtn{
     right: auto;
     bottom: auto;
     border-left: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
   }
   .resumo_fn_right .menu_trigger {
     position: fixed;
@@ -2223,6 +2351,7 @@ button.activebtn{
   }
   .resumo_fn_right .right_in {
     height: auto !important;
+    display: none;
   }
   .resumo_fn_left {
     min-width: 100%;
