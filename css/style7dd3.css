@@ -731,6 +731,30 @@ button.activebtn{
   -ms-align-items: center;
   align-items: center;
 }
+
+.portfolio-item iframe {
+  width: 100%;
+  max-width: 1080px; /* Adjust based on your design */
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+
+
 .resumo_fn_main_title > :last-child {
   margin-bottom: 0 !important;
 }
@@ -1349,7 +1373,7 @@ button.activebtn{
   left: 0;
   right: 0;
   bottom: 0;
-  background-size: cover;
+  background-size:contain;
   background-position: center center;
   background-repeat: no-repeat;
 }
