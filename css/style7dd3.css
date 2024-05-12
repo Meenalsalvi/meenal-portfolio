@@ -138,6 +138,10 @@ body {
   color: #888;
   background-color: #1d1b19;
   word-break: break-word;
+
+  display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    min-height: 100vh;
 }
 .fn__svg {
   fill: currentcolor;
@@ -208,11 +212,36 @@ button{
   text-align: center;
   font-family: Jost, Arial, Helvetica, sans-serif;
 }
-button.activebtn{
-  border-color: #987750;
-  color: #987750;
-
+button.activebtn {
+  width: 100%; /* Full width */
+  display: block; /* Ensures it behaves like a block element */
+  background-color: #4CAF50; /* A green color; change as needed */
+  color: white; /* White text */
+  text-align: center; /* Center-align text */
+  padding: 15px 20px; /* Top and bottom padding of 15px, left and right padding of 20px */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Larger text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover effects */
+  text-decoration: none; /* Remove underline from links */
 }
+
+.activebtn a {
+  color: inherit; /* Inherits color from button */
+  text-decoration: none; /* Ensures no underline */
+  display: block; /* Makes the link fill the button */
+}
+
+.activebtn:hover {
+  background-color: #45a049; /* A slightly lighter green when hovered */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.activebtn:active {
+  transform: translateY(1px); /* Pushes down when clicked */
+}
+
 
 
 .resumo_fn_wrapper,
@@ -251,7 +280,11 @@ button.activebtn{
   .scrolled .resumo_fn_right {
     width: 32%;
   }
-  .scrolled .resumo_fn_left {
+  /* .scrolled .resumo_fn_left {
+    width: 100%;
+  } */
+
+  .resumo_fn_left_scrolled {
     width: 100%;
   }
 
@@ -344,11 +377,30 @@ button.activebtn{
   min-height: 36px;
   position: relative;
 }
-.scrolled .resumo_fn_right{
+
+/* .scrolled .resumo_fn_right{
   display: none;
   width: 0%;
-  /* font-size: small; */
+} */
+
+/* Apply transitions to both panels */
+.resumo_fn_right, .resumo_fn_left {
+  transition: width 0.5s ease, opacity 0.5s ease, visibility 0s linear 0.5s; /* Add visibility to the transition with a delay */
 }
+
+/* Define how the right panel behaves when scrolled */
+.resumo_fn_right.scrolled {
+  width: 0%;
+  opacity: 0;  
+  visibility: hidden;
+  display: none;  
+}
+
+/* Define how the left panel behaves when scrolled */
+.resumo_fn_left.scrolled {
+  width: 100%;
+}
+
 .scrolled .resumo_fn_right .title_holder h3 {
   font-weight: 400;
 }
@@ -761,7 +813,7 @@ button.activebtn{
 .resumo_fn_main_title .subtitle {
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 28px;
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
@@ -771,7 +823,7 @@ button.activebtn{
 .resumo_fn_main_title .title {
   margin: 0;
   padding: 0;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 400;
   letter-spacing: 0;
   padding-bottom: 15px;
@@ -1179,6 +1231,18 @@ button.activebtn{
     width: 100%;
   }
 }
+.item ul {
+  padding-left: 20px; /* Adjusts padding to align text nicely under the title */
+  list-style-type: disc; /* Standard bullet points; change to 'circle', 'square', etc., as desired */
+}
+
+.item li {
+  margin-bottom: 8px; /* Adds space between bullet points for better readability */
+  line-height: 1.6; /* Improves line spacing in the list */
+  color: #333; /* Sets text color, change as needed for your design */
+  font-size: 16px; /* Sets the font size, adjust as needed */
+}
+
 .resumo_fn_desc p {
   max-width: 500px;
 }
@@ -2033,6 +2097,7 @@ button.activebtn{
   clear: both;
   position: relative;
   z-index: 5;
+  margin-top: auto;
 }
 #footer .footer_top {
   width: 100%;
@@ -2940,7 +3005,7 @@ body.light .resumo_fn_modalbox .modal_content::-webkit-scrollbar-thumb {
   top: 70px;
   bottom: 70px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 95%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #181715;
